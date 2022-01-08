@@ -6,6 +6,11 @@ This application was generated using http://start.vertx.io
 
 == Building
 
+Use https://www.docker.com/get-started[docker] to create the database. Run the following command:
+```
+docker-compose -f compose.yml up -d
+```
+
 To launch your tests:
 ```
 ./gradlew clean test
@@ -31,6 +36,7 @@ To run your application:
 * https://stackoverflow.com/questions/tagged/vert.x?sort=newest&pageSize=15[Vert.x Stack Overflow]
 * https://groups.google.com/forum/?fromgroups#!forum/vertx[Vert.x User Group]
 * https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
+* https://www.docker.com/get-started[Docker]
 
 
 
