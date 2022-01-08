@@ -4,7 +4,7 @@ public class ServiceModel {
     public Integer Id;
     public String Name;
     public String Url;
-    public String valid;
+    public String Valid;
     public String Created;
-    public String lastVerified;
+    public String LastVerified;
 }
