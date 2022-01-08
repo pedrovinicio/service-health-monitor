@@ -7,6 +7,7 @@ import ConfirmationModal from './components/UI/ConfirmationModal';
 import EditServiceModal from './components/Services/EditServiceModal';
 import * as Constants from "./constants/Constant"
 import { useInterval } from './hooks/useInterval';
+import AppHeader from './components/UI/AppHeader';
 
 function App() {
   const [servicesList, setServicesList] = useState([]);
@@ -128,6 +129,7 @@ function App() {
 
   return (
     <div>
+      <AppHeader></AppHeader>
       {message && <MessageModal title={message.title} message={message.message} isError={message.isError} onClose={messageModalHandler}></MessageModal>}
       {confirmation && <ConfirmationModal title={confirmation.title} message={confirmation.message} service={confirmation.service} onConfirm={removeServiceHandler} onCancel={cancelDeleteConfirmationModal}></ConfirmationModal>}
       {edit && <EditServiceModal service={edit.service} onSave={updateServiceHandler} onCancel={cancelUpdateModal}></EditServiceModal>}
