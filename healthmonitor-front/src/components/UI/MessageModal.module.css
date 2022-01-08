@@ -1,0 +1,73 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+  }
+  
+  .modal {
+    position: fixed;
+    top: 30vh;
+    left: 10%;
+    width: 80%;
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .headerSuccess {
+    background: #000d85;
+    padding: 1rem;
+  }
+
+  .headerFailure {
+    background: rgb(187, 31, 31);
+    padding: 1rem;
+  }
+  
+  .headerSuccess h2 {
+    margin: 0;
+    color: white;
+  }
+
+  .headerFailure h2 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .actions {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .actionsFailure {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .actionsFailure Button {
+    background: rgb(187, 31, 31);
+    border-color: rgb(141, 21, 21);
+  }
+
+  .actionsFailure Button:hover,
+  .actionsFailure Button:active {
+      background: rgb(141, 21, 21);
+      border-color: rgb(102, 13, 13);
+  }
+
+  @media (min-width: 768px) {
+    .modal {
+      left: calc(50% - 15rem);
+      width: 30rem;
+    }
+  }

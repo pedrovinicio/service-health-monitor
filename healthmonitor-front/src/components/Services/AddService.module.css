@@ -1,0 +1,41 @@
+.title {
+    text-align: center;
+}
+
+.input {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 30rem;
+  }
+  
+.input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+  
+.input input {
+    font: inherit;
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+  
+.input input:focus {
+    outline: none;
+    border-color: #000d85;
+}
+
+.actions Button {
+    background: #000d85;
+    border-color: #010b66;
+}
+
+.actions Button:hover,
+.actions Button:active {
+      background: #01084e;
+      border-color: #01084e
+}

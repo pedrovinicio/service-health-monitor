@@ -1,0 +1,54 @@
+.services {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 120rem;
+}
+  
+.container  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.itemGreen {
+    min-width: 20rem;
+    background-color: green;
+    color: white;
+    padding: 1rem;
+    margin: 0rem 0.5rem 0.5rem 0;
+    border-radius: 5px;
+}
+
+.itemRed {
+    min-width: 20rem;
+    background-color: rgb(187, 31, 31);
+    color: white;
+    padding: 1rem;
+    margin: 0rem 0.5rem 0.5rem 0;
+    border-radius: 5px;
+}
+
+.itemPrimary {
+    color: #d7d4d4;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.itemSecondary {
+    color: #d7d4d4;
+    font-size: 14px;
+}
+
+.itemSecondarySpaced {
+    margin-top: 10px;
+    color: #d7d4d4;
+    font-size: 14px;
+}
+
+.actionButtons {
+    float: right;
+    margin-left: 1rem;
+    cursor: pointer;
+}
