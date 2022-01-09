@@ -8,12 +8,15 @@ import EditServiceModal from './components/Services/EditServiceModal';
 import * as Constants from "./constants/Constant"
 import { useInterval } from './hooks/useInterval';
 import AppHeader from './components/UI/AppHeader';
+import ServerError from './components/UI/ServerError';
 
 function App() {
   const [servicesList, setServicesList] = useState([]);
   const [message, setMessage] = useState()
   const [confirmation, setConfirmation] = useState()
   const [edit, setEdit] = useState()
+  const [serverError, setServerError] = useState(false)
+  
 
   // Fetch all services
   useEffect(() => {
@@ -22,7 +25,6 @@ function App() {
 
   // Set up polling
   useInterval(async () => {
-    console.log("FETCHING SERVICES");
     fetchServices();
   }, Constants.POLLING_INTERVAL);
 
@@ -30,9 +32,9 @@ function App() {
     try {
       const result = await axios.get(Constants.HEALTH_MONITOR_API);
       setServicesList(result.data.services);
-      console.log("list loaded success.");
+      setServerError(false);
     } catch {
-      console.log("list load failed.");
+      setServerError(true);
     }
   };
 
@@ -129,12 +131,13 @@ function App() {
 
   return (
     <div>
-      <AppHeader></AppHeader>
+      <AppHeader>Service monitoring app</AppHeader>
       {message && <MessageModal title={message.title} message={message.message} isError={message.isError} onClose={messageModalHandler}></MessageModal>}
       {confirmation && <ConfirmationModal title={confirmation.title} message={confirmation.message} service={confirmation.service} onConfirm={removeServiceHandler} onCancel={cancelDeleteConfirmationModal}></ConfirmationModal>}
       {edit && <EditServiceModal service={edit.service} onSave={updateServiceHandler} onCancel={cancelUpdateModal}></EditServiceModal>}
       <AddService onAddService={addServiceHandler}></AddService>
-      {servicesList.length && <ServicesList services={servicesList} onRemoveService={openDeleteConfirmationModal} onUpdateService={openUpdateServiceModal}></ServicesList>}
+      {serverError && <ServerError>Something is wrong with our server :(</ServerError>}
+      {(!serverError && servicesList.length) && <ServicesList services={servicesList} onRemoveService={openDeleteConfirmationModal} onUpdateService={openUpdateServiceModal}></ServicesList>}
     </div>
   );
 }
