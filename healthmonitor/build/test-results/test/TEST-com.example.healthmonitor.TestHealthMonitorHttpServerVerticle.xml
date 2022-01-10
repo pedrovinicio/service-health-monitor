@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.healthmonitor.TestHealthMonitorHttpServerVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-10T02:41:08" hostname="PEDRO-PC" time="0.456">
-  <properties/>
-  <testcase name="testAddAndListServices(Vertx, VertxTestContext)" classname="com.example.healthmonitor.TestHealthMonitorHttpServerVerticle" time="0.456"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

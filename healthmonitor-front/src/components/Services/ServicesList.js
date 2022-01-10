@@ -16,7 +16,7 @@ const ServicesList = props => {
     }
 
     return (
-        <Card className={classes.services}>
+        <Card data-testid="service-list" className={classes.services}>
             <div className={classes.container}>
                 {props.services.map((service) =>(
                     <div key={service.Id} className={service.Valid ? classes.itemGreen : classes.itemRed}>
