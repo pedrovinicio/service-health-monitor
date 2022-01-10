@@ -19,7 +19,7 @@ const ServicesList = props => {
         <Card data-testid="service-list" className={classes.services}>
             <div className={classes.container}>
                 {props.services.map((service) =>(
-                    <div key={service.Id} className={service.Valid ? classes.itemGreen : classes.itemRed}>
+                    <div  data-testid={service.Id + (service.Valid ? "-Green" : "-Red")} key={service.Id} className={service.Valid ? classes.itemGreen : classes.itemRed}>
                         <FontAwesomeIcon className={classes.actionButtons} icon={faTrashAlt}  onClick={onRemoveServiceHandler(service)}/>
                         <FontAwesomeIcon className={classes.actionButtons} icon={faEdit}  onClick={onUpdateServiceHandler(service)}/>
                         <div className={classes.itemPrimary}>{service.Name}</div>

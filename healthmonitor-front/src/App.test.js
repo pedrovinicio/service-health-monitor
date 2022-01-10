@@ -45,29 +45,40 @@ describe("Overview", () => {
         const mockedServiceList = {data: { services: [
             {
                 Id: 1,
-                Name: "Google",
-                Url: "https://www.google.com",
-                Status: 1,
+                Name: "Service UP",
+                Url: "https://www.up.com",
+                Valid: 1,
                 Created: "2022-01-08T10:22:11",
-                LastVerified: "2022-01-08T10:22:11"
+                LastVerified: "2022-01-08T10:22:12"
               },
               {
                 Id: 2,
-                Name: "UOL",
-                Url: "https://www.uol.fr",
-                Status: 1,
+                Name: "Service DOWN",
+                Url: "https://www.down.com",
+                Valid: 0,
                 Created: "2022-01-08T10:22:11",
-                LastVerified: "2022-01-08T10:22:11"
+                LastVerified: "2022-01-08T10:21:12"
               },
         ] }};
         axios.get.mockResolvedValue(mockedServiceList);
 
         render(<App />);
 
-        const service1Name = await screen.findByText("Google");
-        const service2Name = await screen.findByText("UOL");
+        const service1UpBox = await screen.findAllByTestId("1-Green");
+        const service1Name = await screen.findByText("Service UP");
+        const service1Url = await screen.findByText("https://www.up.com");
+
+        const service2DownBox = await screen.findAllByTestId("1-Green");
+        const service2Name = await screen.findByText("Service DOWN");
+        const service2Url = await screen.findByText("https://www.down.com");
+
+        expect(service1UpBox).toBeDefined();
         expect(service1Name).toBeDefined();
+        expect(service1Url).toBeDefined();
+
+        expect(service2DownBox).toBeDefined();
         expect(service2Name).toBeDefined();
+        expect(service2Url).toBeDefined();
 
         await act(async () => await promise);
     });
