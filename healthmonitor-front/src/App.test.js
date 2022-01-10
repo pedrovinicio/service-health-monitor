@@ -5,7 +5,7 @@ import App from "./App";
 
 jest.mock("axios");
 
-describe("Overview", () => {
+describe("Basic testing of initial page", () => {
   
     it("Should show error message when service is down", async () => {
         const promise = Promise.resolve();
