@@ -143,7 +143,7 @@ function App() {
       {edit && <EditServiceModal service={edit.service} onSave={updateServiceHandler} onCancel={cancelUpdateModal}></EditServiceModal>}
       <AddService onAddService={addServiceHandler}></AddService>
       {serverError && <ServerError>Something is wrong with our server :(</ServerError>}
-      {(!serverError && servicesList.length) && <ServicesList services={servicesList} onRemoveService={openDeleteConfirmationModal} onUpdateService={openUpdateServiceModal}></ServicesList>}
+      {(!serverError && !!servicesList.length) && <ServicesList services={servicesList} onRemoveService={openDeleteConfirmationModal} onUpdateService={openUpdateServiceModal}></ServicesList>}
     </div>
   );
 }
