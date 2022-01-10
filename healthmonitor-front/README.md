@@ -1,6 +1,6 @@
 # Service health monitoring app
 
-Keep up to date on your services's health. Add a url and to see if a service is UP or DOWN.
+Keep up to date on your services's health. Add a service to see if it is UP or DOWN. A service that is UP is represented by a GREEN box while a DOWN service is represented by a RED box. You can later remove or edit the added service.
 
 ## How to configure
 
@@ -37,5 +37,4 @@ This will run all tests in the `src` folder and it will watch for any changes to
 
 - Improve testing
 - Add animations
-- Add loading state
 - Localization

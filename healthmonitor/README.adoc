@@ -6,7 +6,7 @@ This application was generated using http://start.vertx.io
 
 == Building
 
-Use https://www.docker.com/get-started[docker] to create the database. Run the following command:
+Use https://www.docker.com/get-started[docker] to create the database in an easy and fast way. Running the following command you should be go to go:
 ```
 docker-compose -f compose.yml up -d
 ```
