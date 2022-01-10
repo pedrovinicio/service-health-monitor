@@ -22,8 +22,7 @@ public class TestHealthMonitorHttpServerVerticle {
             )
             .onComplete(response -> {
                 client.get(8888, "localhost", "/").send().onComplete(resp -> {
-                    // Get the previously inserted service name and url
-                    System.out.println("Services" + resp.result());
+                    //get response and check values
                     testContext.completeNow();
                 });
             });

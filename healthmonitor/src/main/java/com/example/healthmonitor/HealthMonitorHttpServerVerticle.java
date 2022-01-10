@@ -116,6 +116,7 @@ public class HealthMonitorHttpServerVerticle extends AbstractVerticle {
     }
 
     private void listServicesHandler(RoutingContext context) {
+        System.out.println("listServicesHandler");
         DeliveryOptions options = new DeliveryOptions().addHeader("action", "list-services");
         vertx.eventBus().request(DBQueue, null, options, response -> {
             if (response.succeeded()) {

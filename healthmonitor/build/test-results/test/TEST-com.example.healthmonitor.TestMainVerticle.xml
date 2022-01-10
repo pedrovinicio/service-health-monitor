@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.healthmonitor.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-10T02:41:09" hostname="PEDRO-PC" time="0.216">
+  <properties/>
+  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="com.example.healthmonitor.TestMainVerticle" time="0.216"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jan 09, 2022 11:41:09 PM io.vertx.core.impl.VertxImpl
+WARNING: You're already on a Vert.x context, are you sure you want to create a new Vertx instance?
+Jan 09, 2022 11:41:09 PM com.example.healthmonitor.db.RepositoryVerticle
+INFO: Service initialized correctly
+Jan 09, 2022 11:41:09 PM io.vertx.core.http.HttpServer
+INFO: Service start at 8888
+]]></system-err>
+</testsuite>
