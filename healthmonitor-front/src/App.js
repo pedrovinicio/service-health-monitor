@@ -9,10 +9,12 @@ import * as Constants from "./constants/Constant"
 import { useInterval } from './hooks/useInterval';
 import AppHeader from './components/UI/AppHeader';
 import ServerError from './components/UI/ServerError';
+import Spinner from './components/UI/Spinner';
 
 function App() {
   const [servicesList, setServicesList] = useState([]);
   const [message, setMessage] = useState()
+  const [loading, setLoading] = useState({isLoading: false})
   const [confirmation, setConfirmation] = useState()
   const [edit, setEdit] = useState()
   const [serverError, setServerError] = useState(false)
@@ -40,6 +42,7 @@ function App() {
 
   const addServiceHandler = async (sName, sUrl) => {
       try {
+        setLoading({ isLoading: true });
         await axios.post(Constants.HEALTH_MONITOR_API, {
           name: sName,
           url: sUrl
@@ -49,6 +52,7 @@ function App() {
           title: "Add service",
           message: "New service " + sName + " added successfully."
         });
+        setLoading({ isLoading: false });
         fetchServices();
       } catch {
         setMessage({
@@ -56,6 +60,7 @@ function App() {
           title: "Add service",
           message: "Something went wrong while adding new service " + sName + "."
         });
+        setLoading({ isLoading: false });
       }
   };
 
@@ -132,6 +137,7 @@ function App() {
   return (
     <div>
       <AppHeader>Service monitoring app</AppHeader>
+      {loading.isLoading &&<Spinner></Spinner>}
       {message && <MessageModal title={message.title} message={message.message} isError={message.isError} onClose={messageModalHandler}></MessageModal>}
       {confirmation && <ConfirmationModal title={confirmation.title} message={confirmation.message} service={confirmation.service} onConfirm={removeServiceHandler} onCancel={cancelDeleteConfirmationModal}></ConfirmationModal>}
       {edit && <EditServiceModal service={edit.service} onSave={updateServiceHandler} onCancel={cancelUpdateModal}></EditServiceModal>}
