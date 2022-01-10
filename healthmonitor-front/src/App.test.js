@@ -17,10 +17,9 @@ describe("Overview", () => {
 
         render(<App />);
 
-        // Find empty placeholder text
         const errorText = await screen.findByText("Something is wrong with our server :(");
-
         expect(errorText).toBeDefined();
+
         await act(async () => await promise);
     });
 
@@ -33,10 +32,9 @@ describe("Overview", () => {
 
         render(<App />);
 
-        // Find empty placeholder text
         const serviceList = screen.findByTestId("service-list");
-
         expect(JSON.stringify(serviceList)).toEqual(JSON.stringify({}));
+
         await act(async () => await promise);
     });
 
@@ -66,12 +64,8 @@ describe("Overview", () => {
 
         render(<App />);
 
-        // Find name and status of first service
         const service1Name = await screen.findByText("Google");
-
-        // Find name and status of second service
         const service2Name = await screen.findByText("UOL");
-
         expect(service1Name).toBeDefined();
         expect(service2Name).toBeDefined();
 
