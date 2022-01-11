@@ -1,12 +1,18 @@
 == Service health monitoring
 
+This service allows you to add, delete, edit and list services.
+
+It uses a MySQL db to store the services.
+
+It will keep firing requests to the added services every minutes and updating its status on the db.
+
 image:https://img.shields.io/badge/vert.x-4.2.3-purple.svg[link="https://vertx.io"]
 
 This application was generated using http://start.vertx.io
 
 == Building
 
-Use https://www.docker.com/get-started[docker] to create the database in an easy and fast way. Running the following command you should be go to go:
+Use https://www.docker.com/get-started[docker] to create the MySQL db in an easy way. You should run the following command:
 ```
 docker-compose -f compose.yml up -d
 ```
