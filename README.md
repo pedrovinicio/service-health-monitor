@@ -4,7 +4,7 @@ This application allows you to keep track on your services' health.
 
 You are able to add as many URL as you want in the frontend application. The frontend will keep polling the backend every 30s to check for status changes.
 
-The backend will be firing requests to the URL every minute and update the status accordingly.
+The backend will be firing requests to each service URL every minute and update the service status accordingly.
 
 ## About the app
 
