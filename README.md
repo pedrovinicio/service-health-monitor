@@ -8,9 +8,12 @@ The backend will be firing requests to each service URL every minute and update 
 
 ## About the app
 
--The frontend code is located on "healthmonitor-front" and it was built using [ReactJS](https://reactjs.org/).
--You can see more details about it [HERE](https://github.com/pedrovinicio/service-health-monitor/tree/main/healthmonitor-front)
+The frontend code is located on "healthmonitor-front" and it was built using [ReactJS](https://reactjs.org/).
 
--The backend code is located on "healthmonitor" and it was built using [Vert.x](https://vertx.io/docs/).
--You can see more details about it [HERE](https://github.com/pedrovinicio/service-health-monitor/tree/main/healthmonitor)
+You can see more details about it [HERE](https://github.com/pedrovinicio/service-health-monitor/tree/main/healthmonitor-front)
+
+
+The backend code is located on "healthmonitor" and it was built using [Vert.x](https://vertx.io/docs/).
+
+You can see more details about it [HERE](https://github.com/pedrovinicio/service-health-monitor/tree/main/healthmonitor)
 
